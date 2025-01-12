@@ -17,7 +17,7 @@ public class Game {
      }
   }
   public static void start_screen() {
-     gm.action(type.CONTROLLER -> type.OPENSCREEN);
+     gm.action(gm.screen.open());
   }
   public static void start_game() {
      gm.screen.set("window-width",500);
