@@ -5,7 +5,7 @@ jCode = """
   // printIn : print Integer
   // printf : print with float
   public static void start() {
-    for ( Integer i = 0 ; i ==5 ; System.output.printIn(i)) {
+    for ( Integer i = 0 ; i < 5 ; System.output.printIn(i)) {
       i += 1;
     }
     System.output.prints("Loop complete");
