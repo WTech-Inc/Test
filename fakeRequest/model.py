@@ -2,14 +2,20 @@
 supportLang = ["py","nodeJS"]
 pyWords = {
   "print":"print()",
-  "condition":["if","elif",else"]
+  "condition":["if","elif","else"],
+  "loop":["while","for","in","range"],
+  "error":["try","except"],
+  "class":["class"],
+  "functions":["def","@"],
+  "import":["from","import"]
+  "webModules":["flask"]
 }
 
 class Brain:
     def __init__(self,prompt):
         self.input = prompt
         self.coding = False
-        self.output = ""
+        self.output = None
         return self.inputLayer()
     def inputLayer(self):
         self.prompt = self.input.strip()
@@ -27,8 +33,13 @@ class Brain:
                     
     def deepThinkLayer(self, lang):
         if lang == "py":
-            pass
+          if "web" in self.prompt:
+            self.output = f"""
+            {pyWords["import"][0]} {pyWords["webModules"][0]} {pyWords["import"][1]} *
+            app = Flask("app")
+            
+            """
         elif lang == "nodeJS":
-            pass
+          pass
     def outputLayer(self):
         pass
