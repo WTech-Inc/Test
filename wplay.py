@@ -10,10 +10,10 @@ class ScreenView(View):
         return self._render_all(**options)
     def first_page(self):
         label1 = Text(padding=["10px","20px", "5px", "5px"],text="Hello",color=rgb(255,255,255))
-        btn = Button(padding=["15px","25px"],text="click me",bgColor=rgb(0,0,0),color=rgb(255,255,255),onClick=self.handleClick)
+        btn = Button(padding=["15px","25px"],text="click me",bgColor=rgb(0,0,0),color=rgb(255,255,255),onClick=handleClick)
         return self._render(textView=[label1,btn])
     @staticmethod
-    def handleClick(self):
+    def handleClick():
         msg = Message(title="Hi",content="you clicked me",type="alert")
         return msg.active()
 
