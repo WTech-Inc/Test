@@ -2,8 +2,18 @@ from wplay import App
 from wplay.ui import Text,View,Button
 from wplay.ui.color import rgb
 from wplay.ui.messageBox import Message
+from wplay.w import Complie
 
 app = App()
+
+styles = Complie("""
+  AllPage --> 
+    backgroundColor -> colors::rgb(0,0,0),
+    fontColor -> colors::rgb(255,255,255);
+  Button::hover -->
+    backgroundColor -> colors::rgb(0,255,0);
+    fontColor -> colors::rgb(0,0,255);
+""")
 
 class ScreenView(View):
     def _render(self, **options):
@@ -18,4 +28,5 @@ class ScreenView(View):
         return msg.active()
 
 app.addView(ScreenView)
+app.addStyles([styles], src="w-lang")
 app.startLoop()
