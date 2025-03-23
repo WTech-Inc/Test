@@ -5,8 +5,10 @@ from fungpt.models.datasets import ImageFinder
 app = App(apiKey="key-here")
 
 class DriveModel(Brain):
-    self.layersCount = 189
-    self.ds = DataSets(ImageFinder(target="Road&highway&traffic&human", src=["browser/Chrome","browser/Bing","fungpt/images"]), usingNode=128)
+    def __init__(self):
+      super().__init__()
+      self.layersCount = 189
+      self.ds = DataSets(ImageFinder(target="Road&highway&traffic&human", src=["browser/Chrome","browser/Bing","fungpt/images"]), usingNode=128)
     def forward(self):
         return self._forward()
     def imageLook(self):
