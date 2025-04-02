@@ -30,7 +30,7 @@ def create_user(req):
         if not users:
             query = con.db.session.query("insert into users values (%s, %s)", (username, pw))
             query.commit()
-            return Response("**/login", type="redirect", code=200)
+            return Response("**/login", type="redirect", code=302)
         return Response("User is already get", code=400)
     return Response("Request method is not support", code=400)
 
