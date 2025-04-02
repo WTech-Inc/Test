@@ -21,6 +21,18 @@ def login(req):
             return Response("Login success", code=200)
     return Response(jsonify({"msg":"Users not found"}), code=404)
     
+@con.route("/create/user")
+def create_user(req):
+    if req.method == "POST":
+        username = req.form.get("username")
+        pw = req.form.get("pw")
+        users = con.db.session.query("select * from users where username=(%s)", (username)).fetchone()
+        if not users:
+            query = con.db.session.query("insert into users values (%s, %s)", (username, pw))
+            query.commit()
+            return Response("**/login", type="redirect", code=200)
+        return Response("User is already get", code=400)
+    return Response("Request method is not support", code=400)
 
 app.add_threads([con])
 app.run()
