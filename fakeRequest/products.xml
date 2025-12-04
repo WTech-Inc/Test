@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'>
+      <products>
+        <product name="chatGPT" price="9990" />
+        <product name="deepseek" price="1000" />
+        <product name="doubao" price="100" />
+      </products>
+    </?xml>
