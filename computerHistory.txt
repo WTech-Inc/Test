@@ -1,0 +1,46 @@
+ls
+ls -a
+ls
+ls -a
+adduser benchan
+passwd root
+cp . /home/benchan
+cp * /home/benchan
+ls /home/benchan
+ls -a /home/benchan
+su benchan
+cp ~/.myEnv /home/benchan
+ls
+ls -a
+touch root.sh && echo "chmod 4755 /bin/su" >> root.sh
+chmod +x root.sh
+chown benchan: root.sh
+ls -l
+su benchan
+exit
+ls
+ls -
+ls -a
+ls .git
+cat .git/config
+clear
+git pull origin ownerLine
+ls
+git checkout
+git statis
+git status
+git branch
+git branch -b marketingDept
+git checkout -b marketingDept
+git pull origin marketingDept
+git checkout
+git checkout marketingDept
+git log
+touch gitLog.txt && git log >> gitLog.txt
+exit
+git checkout ownerLine
+git log
+cat .ashrc_history
+ls -a
+cat .ash_history
+touch computerHistory.txt && cat .ash_history >> computerHistory.txt
